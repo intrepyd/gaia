@@ -1,0 +1,19 @@
+.task-list-item {
+  line-height: 1.2rem;
+}
+
+.task-list-item input[type="checkbox"] {
+  visibility: hidden;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.task-list-item input[type="checkbox"]:before {
+  visibility: visible;
+  content: "⬜️";
+}
+
+.task-list-item input[type="checkbox"]:checked:before {
+  content: "✅️";
+}
