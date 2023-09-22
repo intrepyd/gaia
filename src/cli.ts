@@ -1,3 +1,5 @@
+#!/usr/bin/env bun
+
 import child from "child_process";
 import path from "path";
 import sade from "sade";

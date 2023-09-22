@@ -1,11 +1,10 @@
-import { Fragment } from "react";
+import userConfig from "__config__";
+import Component, * as c from "__component__";
+
 import { hydrateRoot } from "react-dom/client";
 import { Router } from "wouter";
 
-import Component, * as c from "__component__";
-import "__config__";
-
-const Layout = c?.config?.layout ?? Fragment;
+const Layout = userConfig.layout ?? c.layout;
 
 hydrateRoot(
   document.getElementById("root") as HTMLElement,
