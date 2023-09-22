@@ -127,6 +127,7 @@ export async function html(file: string, location: string) {
     plugins: [mdxPlugin],
     alias: {
       __component__: String(file),
+      __config__: String(path.join(root, "gaia.config.ts")),
     },
     outdir: "dist",
   }).then((r) => {
