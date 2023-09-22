@@ -4,9 +4,9 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun run ../src/index.ts",
-    "preload": "bun run ../src/preload.ts",
-    "dev": "WATCH=true bun run --hot ../src/index.ts"
+    "start": "bun x gaia start",
+    "preload": "bun x gaia preload",
+    "dev": "bun x gaia dev"
   },
   "dependencies": {
     "clsx": "^2.0.0",
