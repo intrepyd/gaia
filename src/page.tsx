@@ -211,7 +211,7 @@ export async function preload() {
     path.join(root, config.distDir),
     { recursive: true }
   );
-  console.time("copy public");
+  console.timeEnd("copy public");
 
   console.time("preload pages");
   await preloadEntries(
