@@ -205,10 +205,18 @@ export async function preloadEntries(dirPath: string, distPath: string) {
 }
 
 export async function preload() {
-  console.time("preloadEntries");
+  console.time("copy public");
+  await fs.cp(
+    path.join(root, config.publicDir),
+    path.join(root, config.distDir),
+    { recursive: true }
+  );
+  console.time("copy public");
+
+  console.time("preload pages");
   await preloadEntries(
     path.join(root, config.pagesDir),
     path.join(root, config.distDir)
   );
-  console.timeEnd("preloadEntries");
+  console.timeEnd("preload pages");
 }

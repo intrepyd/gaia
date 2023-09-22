@@ -1,12 +1,10 @@
 import { Server } from "bun";
-import fs from "fs/promises";
 import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
 import path from "path";
 import { WATCH, devWebsocket } from "./dev.ts";
 import { getConfig, guessPath, html, preload } from "./page.tsx";
 import { runFunction } from "./run.ts";
-import { root } from "./utils.ts";
 
 const config = await getConfig();
 
@@ -65,12 +63,6 @@ app.onError((error, c) => {
 export async function start() {
   try {
     if (WATCH) {
-      await fs.cp(
-        path.join(root, config.publicDir),
-        path.join(root, config.distDir),
-        { recursive: true }
-      );
-
       await preload().catch(console.error);
     }
 
